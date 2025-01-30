@@ -1,0 +1,34 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.19;
+
+import "forge-std/Script.sol";
+import
+    "./../../contracts/release/extensions/external-position-manager/external-positions/aave-v3-debt/AaveV3DebtPositionLib.sol";
+import "forge-std/console.sol";
+import "./Addresses.sol";
+
+contract DeployAaveV3DebtPositionLib is Script {
+    // Define constants for the constructor parameters
+    address public constant dataProviderAddress = 0x69FA688f1Dc47d4B5d8029D5a35FB7a548310654; // Provided Data Provider address
+    address public constant lendingPoolAddressProviderAddress = 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb; // Provided Lending Pool Address Provider address
+    uint16 public constant referralCode = 0; // Provided referral code
+    address public constant rewardsControllerAddress = 0x929EC64c34a17401F460460D4B9390518E5B473e; // Provided Rewards Controller address
+
+    function run() external returns (address) {
+        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY"); // Fetch private key for deployment
+
+        vm.startBroadcast(deployerPrivateKey); // Start transaction broadcasting
+
+        // Instantiate the AaveV3DebtPositionLib contract with the provided constructor values
+        AaveV3DebtPositionLib debtPositionLib = new AaveV3DebtPositionLib(
+            IAaveV3ProtocolDataProvider(dataProviderAddress),
+            IAaveV3PoolAddressProvider(lendingPoolAddressProviderAddress),
+            referralCode,
+            IAaveV3RewardsController(rewardsControllerAddress)
+        );
+
+        vm.stopBroadcast(); // Stop transaction broadcasting
+
+        return (address(debtPositionLib)); // Return the deployed contract address
+    }
+}
