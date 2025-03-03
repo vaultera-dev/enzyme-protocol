@@ -7,9 +7,15 @@ import "forge-std/console.sol";
 import "./Addresses.sol";
 
 contract DeployAaveV3ATokenListOwner is Script {
-    address public immutable addressListRegistry = Addresses.ADDRESS_LIST_REGISTRY; // replace with actual address
-    string public constant listDescription = "Aave v3: aTokens"; // replace with actual description
-    address public constant poolAddressProvider = 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb; // replace with actual address
+    //arbitrum
+    // address public immutable addressListRegistry = Addresses.ADDRESS_LIST_REGISTRY; // replace with actual address
+    // string public constant listDescription = "Aave v3: aTokens"; // replace with actual description
+    // address public constant poolAddressProvider = 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb; // replace with actual address
+
+    //ethereum
+    address public immutable addressListRegistry = Addresses.ADDRESS_LIST_REGISTRY;
+    string public constant listDescription = "Aave v3: aTokens";
+    address public constant poolAddressProvider = 0x2f39d218133afab8f2b819b1066c7e434ad94e9e;
 
     function run() external returns (address) {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");

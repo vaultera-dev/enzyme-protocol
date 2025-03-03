@@ -7,14 +7,27 @@ import "forge-std/console.sol";
 import "./Addresses.sol";
 
 contract DeployVaultLib is Script {
+    //arbitrum
+    // address public immutable externalPositionManager = Addresses.EXTERNAL_POSITION_MANAGER;
+    // address public immutable gasRelayPaymasterFactory = Addresses.GAS_RELAY_PAYMASTER_FACTORY;
+    // address public immutable protocolFeeReserve = Addresses.PROTOCOL_FEE_RESERVE_PROXY; //protocolFeeReserve
+    // address public immutable protocolFeeTracker = Addresses.PROTOCOL_FEE_TRACKER;
+    // address public constant mlnToken = 0xaf421A0A3c72E4C7C162463D0Ad1C92f33419428;
+    // address public immutable mlnBurner = Addresses.PROTOCOL_FEE_RESERVE_PROXY; // protocolFeeReserve
+    // address public constant wethToken = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1;
+    // uint256 public constant positionsLimit = 20;
+
+
+    //ethereum
     address public immutable externalPositionManager = Addresses.EXTERNAL_POSITION_MANAGER;
     address public immutable gasRelayPaymasterFactory = Addresses.GAS_RELAY_PAYMASTER_FACTORY;
     address public immutable protocolFeeReserve = Addresses.PROTOCOL_FEE_RESERVE_PROXY; //protocolFeeReserve
     address public immutable protocolFeeTracker = Addresses.PROTOCOL_FEE_TRACKER;
-    address public constant mlnToken = 0xaf421A0A3c72E4C7C162463D0Ad1C92f33419428;
-    address public immutable mlnBurner = Addresses.PROTOCOL_FEE_RESERVE_PROXY; // protocolFeeReserve
-    address public constant wethToken = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1;
+    address public constant mlnToken = 0xec67005c4e498ec7f55e092bd1d35cbc47c91892;
+    address public immutable mlnBurner = Addresses.PROTOCOL_FEE_RESERVE_PROXY; // protocolFeeReserve // is addresszero
+    address public constant wethToken = 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2;
     uint256 public constant positionsLimit = 20;
+
 
     function run() external returns (address) {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");

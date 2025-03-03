@@ -9,8 +9,14 @@ import "./Addresses.sol";
 
 contract DeployUniswapV3LiquidityPositionLib is Script {
     // Define constants for the constructor parameters
+    // address public constant nonFungibleTokenManagerAddress = 0xC36442b4a4522E871399CD717aBDD847Ab11FE88; // Provided nonFungibleTokenManager address
+    // address public immutable valueInterpreterAddress = Addresses.VALUE_INTERPRETER; // Replace with actual ValueInterpreter address
+
+
+    //ethereum mainnet
     address public constant nonFungibleTokenManagerAddress = 0xC36442b4a4522E871399CD717aBDD847Ab11FE88; // Provided nonFungibleTokenManager address
-    address public immutable valueInterpreterAddress = Addresses.VALUE_INTERPRETER; // Replace with actual ValueInterpreter address
+    address public immutable valueInterpreterAddress = 0x369373dE3A389047aD7e7846470Eb8324fc3Fe8E; // Replace with actual ValueInterpreter address
+
 
     function run() external returns (address) {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY"); // Fetch private key for deployment

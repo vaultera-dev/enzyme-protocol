@@ -8,8 +8,12 @@ import "./Addresses.sol";
 
 contract DeployOneInchV5Adapter is Script {
     // Define constants for the constructor parameters
+    // address public immutable integrationManagerAddress = Addresses.INTEGRATION_MANAGER; // Replace with actual IntegrationManager address
+    // address public constant oneInchV5ExchangeAddress = 0x1111111254EEB25477B68fb85Ed929f73A960582; // Provided OneInchV5 Exchange address
+
+    //ethereum mainnet
     address public immutable integrationManagerAddress = Addresses.INTEGRATION_MANAGER; // Replace with actual IntegrationManager address
-    address public constant oneInchV5ExchangeAddress = 0x1111111254EEB25477B68fb85Ed929f73A960582; // Provided OneInchV5 Exchange address
+    address public constant oneInchV5ExchangeAddress = 0x1111111254eeb25477b68fb85ed929f73a960582; // Provided OneInchV5 Exchange address
 
     function run() external returns (address) {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY"); // Fetch private key for deployment

@@ -12,7 +12,13 @@ contract DeployOnlyRemoveDustExternalPositionPolicy is Script {
     address public immutable policyManagerAddress = Addresses.POLICY_MANAGER; // Replace with actual PolicyManager address
     address public immutable fundDeployerAddress = Addresses.FUND_DEPLOYER; // Replace with actual FundDeployer address
     address public immutable valueInterpreterAddress = Addresses.VALUE_INTERPRETER; // Replace with actual ValueInterpreter address
-    address public constant wethTokenAddress = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1; // Provided WETH address
+    // address public constant wethTokenAddress = 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1; // Provided WETH address
+    // uint256 public constant pricelessAssetBypassTimelock = 604800; // 7 days in seconds
+    // uint256 public constant pricelessAssetBypassTimeLimit = 172800; // 2 days in seconds
+
+
+    //ethereum
+    address public constant wethTokenAddress = 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2; // Provided WETH address
     uint256 public constant pricelessAssetBypassTimelock = 604800; // 7 days in seconds
     uint256 public constant pricelessAssetBypassTimeLimit = 172800; // 2 days in seconds
 
