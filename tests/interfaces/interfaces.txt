@@ -120,6 +120,7 @@ IAaveV2Adapter.sol: AaveV2Adapter.abi.json
 IBalancerV2LiquidityAdapter.sol: BalancerV2LiquidityAdapter.abi.json
 ICompoundAdapter.sol: CompoundAdapter.abi.json
 IERC4626Adapter.sol: ERC4626Adapter.abi.json
+<<<<<<< HEAD
 IZeroExV4Adapter.sol: ZeroExV4Adapter.abi.json
 ISwellStakingAdapter.sol: SwellStakingAdapter.abi.json
 IDivaStakingAdapter.sol: DivaStakingAdapter.abi.json
@@ -127,6 +128,10 @@ IGenericWrappingAdapterBase.sol: GenericWrappingAdapterBase.abi.json
 IOneInchV5Adapter.sol: OneInchV5Adapter.abi.json
 ITransferAssetsAdapter.sol: TransferAssetsAdapter.abi.json
 IPendleV2Adapter.sol: PendleV2Adapter.abi.json
+=======
+IArrakisV2Adapter.sol: ArrakisV2Adapter.abi.json
+IZeroExV4Adapter.sol: ZeroExV4Adapter.abi.json
+>>>>>>> 61cea9bc487abcddb358c6de0fb1f327a1b9d6d8
 
 # External positions
 IExternalPositionManager.sol: ExternalPositionManager.abi.json
